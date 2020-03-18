@@ -20,8 +20,6 @@ const cities: City[] = [
   },
 ];
 
-const hiddenApiKey = window.btoa('62cb1aff129ffa5f0374b5be5fad9256');
-
 export const App: FC = () => {
   return (
     <div className="wrapper">
@@ -37,7 +35,7 @@ export const App: FC = () => {
           <li>
             {'Api key: '}
             <span className="api_info__key">
-              {hiddenApiKey}
+              hidden
             </span>
           </li>
         </ul>
