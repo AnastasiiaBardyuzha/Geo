@@ -4,7 +4,6 @@ import './App.css';
 import { Towns } from './components/Towns/Towns';
 import { City } from './types';
 
-
 const cities: City[] = [
   {
     id: 703448,
