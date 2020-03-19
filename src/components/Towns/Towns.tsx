@@ -1,7 +1,11 @@
 import React, { FC, useState } from 'react';
 import { Town } from '../Town/Town';
 import { Weather } from '../Weather/Weather';
-import { City, WeatherInterface } from '../../types';
+import {
+  City,
+  WeatherInterface,
+  TownWeather,
+} from '../../lib/types';
 import { API_URL, getData } from '../../api_helpers';
 
 type Props ={
@@ -19,7 +23,7 @@ export const Towns: FC<Props> = ({ cities }) => {
 
     setTown(currentTown);
 
-    const getWeather = () => {
+    const getWeather = (): Promise<TownWeather> => {
       return getData(`${API_URL}${currentId}`);
     };
 
@@ -48,7 +52,14 @@ export const Towns: FC<Props> = ({ cities }) => {
   return (
     <>
       {cities.map(
-        item => <Town key={item.id} title={item.city} id={item.id} handleTown={handleTown} />,
+        item => (
+          <Town
+            key={item.id}
+            title={item.city}
+            id={item.id}
+            handleTown={handleTown}
+          />
+        ),
       )}
       {weather && <Weather town={town} weather={weather} />}
     </>

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { WeatherInterface } from '../../types';
+import { WeatherInterface } from '../../lib/types';
 import './Weather.css';
 
 type Props = {
