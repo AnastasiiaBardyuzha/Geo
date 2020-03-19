@@ -8,15 +8,13 @@ type Props ={
 };
 
 export const Town: FC<Props> = ({ title, handleTown, id }) => (
-  <>
-    <button
-      type="button"
-      value={title}
-      id={String(id)}
-      className="btn btn-outline-primary my_btn-outline-primary"
-      onClick={handleTown}
-    >
-      {title}
-    </button>
-  </>
+  <button
+    type="button"
+    value={title}
+    id={String(id)}
+    className="btn btn-outline-primary my_btn-outline-primary"
+    onClick={handleTown}
+  >
+    {title}
+  </button>
 );
